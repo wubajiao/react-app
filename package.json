@@ -1,0 +1,9 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "react app with React、TypeScript、Less、Eslint",
+  "main": "index.js",
+  "repository": "git@github.com:wuhaidong-me/react-app.git",
+  "author": "hayden <i@wuhaidong.me>",
+  "license": "MIT"
+}
