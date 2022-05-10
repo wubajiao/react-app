@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /*
  * @Descripttion : prettier 测试文件
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 10:08:02
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 11:16:32
+ * @LastEditTime : 2022-05-10 14:54:29
  */
 
 const singleQuote = '是否单引号，jsxSingleQuote 表示jsx语法下是否单引号'
