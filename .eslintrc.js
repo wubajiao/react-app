@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 11:31:15
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 14:53:28
+ * @LastEditTime : 2022-05-10 15:05:38
  */
 const OFF = 0
 const WARN = 1
@@ -94,7 +94,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': WARN,
     'no-unused-vars': OFF,
 
-    'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
+    'react/jsx-filename-extension': [
+      ERROR,
+      { extensions: ['.tsx', 'ts', '.jsx', 'js'] },
+    ],
     'react/jsx-indent-props': [ERROR, 2],
     'react/jsx-indent': [ERROR, 2],
     'react/jsx-one-expression-per-line': OFF,
@@ -120,5 +123,6 @@ module.exports = {
     'no-use-before-define': OFF,
     'no-restricted-syntax': OFF,
     'no-continue': OFF,
+    'operator-linebreak': [ERROR, 'after'],
   },
 }
