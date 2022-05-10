@@ -6,6 +6,9 @@
   "repository": "git@github.com:wuhaidong-me/react-app.git",
   "author": "hayden <i@wuhaidong.me>",
   "license": "MIT",
+  "scripts": {
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
