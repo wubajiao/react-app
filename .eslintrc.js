@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 11:31:15
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 15:24:51
+ * @LastEditTime : 2022-05-10 16:36:24
  */
 const OFF = 0
 const WARN = 1
@@ -22,11 +22,6 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    // 配置 eslint和prettier 冲突
-    'prettier',
-    'prettier/@typescript-eslint',
-    'prettier/react',
-    'prettier/unicorn',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -90,19 +85,16 @@ module.exports = {
     'unicorn/no-array-reduce': OFF,
 
     '@typescript-eslint/no-useless-constructor': ERROR,
-    '@typescript-eslint/no-empty-function': WARN,
+    '@typescript-eslint/no-empty-function': ERROR,
     '@typescript-eslint/no-var-requires': OFF,
     '@typescript-eslint/explicit-function-return-type': OFF,
     '@typescript-eslint/explicit-module-boundary-types': OFF,
     '@typescript-eslint/no-explicit-any': OFF,
     '@typescript-eslint/no-use-before-define': ERROR,
     '@typescript-eslint/no-unused-vars': WARN,
-    'no-unused-vars': OFF,
+    'no-unused-vars': WARN,
 
-    'react/jsx-filename-extension': [
-      ERROR,
-      { extensions: ['.tsx', 'ts', '.jsx', 'js'] },
-    ],
+    'react/jsx-filename-extension': [ERROR, { extensions: ['.tsx', 'ts', '.jsx', 'js'] }],
     'react/jsx-indent-props': [ERROR, 2],
     'react/jsx-indent': [ERROR, 2],
     'react/jsx-one-expression-per-line': OFF,
