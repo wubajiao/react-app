@@ -7,11 +7,15 @@
   "author": "hayden <i@wuhaidong.me>",
   "license": "MIT",
   "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.15.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -32,7 +36,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint --config .commitlintrc.js -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
