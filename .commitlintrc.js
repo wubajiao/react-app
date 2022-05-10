@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 16:58:00
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 16:58:41
+ * @LastEditTime : 2022-05-10 17:39:31
  */
 
 /**
@@ -18,7 +18,7 @@
  * revert : 撤销上一次的 commit
  * style : 代码格式改变
  * test : 增加测试
- * anno: 增加注释
+ * anno: 增加注释,这个是非官方的，个人添加类型
  */
 
 module.exports = {
