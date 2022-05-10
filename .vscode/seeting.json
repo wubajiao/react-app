@@ -6,6 +6,14 @@
     "package-lock": true
   },
   "editor.formatOnSave": true,
+
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

@@ -1,9 +1,9 @@
 /*
- * @Descripttion :
+ * @Descripttion : ESlint配置文件
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 11:31:15
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 15:05:38
+ * @LastEditTime : 2022-05-10 15:24:51
  */
 const OFF = 0
 const WARN = 1
@@ -22,6 +22,11 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    // 配置 eslint和prettier 冲突
+    'prettier',
+    'prettier/@typescript-eslint',
+    'prettier/react',
+    'prettier/unicorn',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
