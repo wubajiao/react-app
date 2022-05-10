@@ -1,9 +1,9 @@
 /*
- * @Descripttion :
+ * @Descripttion : prettier 测试文件
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 10:08:02
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2022-05-10 10:35:11
+ * @LastEditTime : 2022-05-10 11:16:32
  */
 
 const singleQuote = '是否单引号，jsxSingleQuote 表示jsx语法下是否单引号'
