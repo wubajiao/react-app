@@ -1,0 +1,4 @@
+# 设置为自动保存格式化的话要设置格式化忽略文件
+/node_modules
+/build
+/dist
