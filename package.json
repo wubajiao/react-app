@@ -7,6 +7,7 @@
   "author": "hayden <i@wuhaidong.me>",
   "license": "MIT",
   "scripts": {
+    "build": "webpack --config ./scripts/webpack.base.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install"
   },
@@ -32,7 +33,9 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.5.0",
     "stylelint-order": "^5.0.0",
-    "typescript": "^4.6.4"
+    "typescript": "^4.6.4",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
   },
   "husky": {
     "hooks": {
