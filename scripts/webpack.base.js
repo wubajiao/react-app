@@ -1,9 +1,9 @@
 /*
- * @Descripttion :
+ * @Descripttion : webpack公共配置
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-29 17:58:35
+ * @LastEditTime : 2023-03-30 14:42:48
  */
 const path = require('path')
 
