@@ -7,7 +7,7 @@
   "author": "hayden <i@wuhaidong.me>",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack --config ./scripts/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./scripts/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.prod.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install"
@@ -26,6 +26,7 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-unicorn": "^42.0.0",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
@@ -38,6 +39,7 @@
     "typescript": "^4.6.4",
     "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1",
     "webpack-merge": "^5.8.0"
   },
   "husky": {
