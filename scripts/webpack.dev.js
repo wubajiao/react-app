@@ -3,8 +3,9 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-30 12:29:27
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-30 17:57:52
+ * @LastEditTime : 2023-03-30 18:10:08
  */
+const WebpackBar = require('webpackbar')
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base')
 
@@ -24,4 +25,12 @@ module.exports = merge(base, {
       },
     },
   },
+  plugins: [
+    // 进度条
+    new WebpackBar({
+      color: '#389e0d', // 默认green，进度条颜色支持HEX
+      basic: false, // 默认true，启用一个简单的日志报告器
+      profile: false, // 默认false，启用探查器。
+    }),
+  ],
 })
