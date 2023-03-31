@@ -3,11 +3,45 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-31 14:55:38
+ * @LastEditTime : 2023-03-31 15:43:53
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 const { isDev } = require('./constants')
+
+const getCssLoaders = (importLoaders) => [
+  'style-loader',
+  {
+    loader: 'css-loader',
+    options: {
+      modules: false,
+      sourceMap: isDev,
+      importLoaders,
+    },
+  },
+  {
+    loader: 'postcss-loader',
+    options: {
+      sourceMap: isDev,
+      postcssOptions: {
+        plugins: [
+          'postcss-flexbugs-fixes',
+          [
+            'postcss-preset-env',
+            {
+              autoprefixer: {
+                grid: true,
+                flexbox: 'no-2009',
+              },
+              stage: 3,
+            },
+          ],
+          'postcss-normalize',
+        ],
+      },
+    },
+  },
+]
 
 module.exports = {
   entry: {
@@ -28,30 +62,12 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: false,
-              sourceMap: isDev, // 开启后与devtool设置一致，开发环境开启，生产环境关闭
-              importLoaders: 0, // 指定在css loader 处理前使用的loader数量
-            },
-          },
-        ],
+        use: getCssLoaders(1),
       },
       {
         test: /\.less$/,
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: false,
-              sourceMap: isDev,
-              importLoaders: 1, // 需要先被less-loader 处理，所以这里设置为1
-            },
-          },
+          ...getCssLoaders(2),
           {
             loader: 'less-loader',
             options: {
@@ -63,15 +79,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              modules: false,
-              sourceMap: isDev,
-              importLoaders: 1, // 需要先被less-loader 处理，所以这里设置为1
-            },
-          },
+          ...getCssLoaders(2),
           {
             loader: 'sass-loader',
             options: {

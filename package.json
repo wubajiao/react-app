@@ -17,6 +17,7 @@
     "@commitlint/config-conventional": "^16.2.4",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
+    "autoprefixer": "^10.4.14",
     "clean-webpack-plugin": "^4.0.0",
     "conventional-changelog-cli": "^2.2.2",
     "cross-env": "^7.0.3",
@@ -34,6 +35,10 @@
     "less-loader": "^11.1.0",
     "lint-staged": "^12.4.1",
     "node-sass": "^8.0.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^7.1.0",
+    "postcss-normalize": "^10.0.1",
+    "postcss-preset-env": "^8.2.0",
     "prettier": "^2.6.2",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
@@ -66,5 +71,11 @@
     "*.{ts,tsx,js,json,html,yml,css,less,scss,md}": [
       "prettier --write"
     ]
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "ie >= 9",
+    "not op_mini all"
+  ]
 }
