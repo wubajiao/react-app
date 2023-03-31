@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-31 16:23:54
+ * @LastEditTime : 2023-03-31 17:00:32
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
@@ -45,7 +45,7 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/app.js'),
+    app: path.resolve(__dirname, '../src/index.js'),
   },
   output: {
     filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
@@ -114,6 +114,13 @@ module.exports = {
             },
           },
         ],
+      },
+      // 处理tsx、js。.jsx 的格式排除在外了，因为我不可能在 ts 环境下建 .jsx 文件，实在要用jsx 语法的时候，用.js
+      {
+        test: /\.(tsx?|js)$/,
+        loader: 'babel-loader',
+        options: { cacheDirectory: true },
+        exclude: /node_modules/,
       },
     ],
   },
