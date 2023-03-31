@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-30 12:29:27
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-30 18:10:08
+ * @LastEditTime : 2023-03-31 12:27:41
  */
 const WebpackBar = require('webpackbar')
 const { merge } = require('webpack-merge')
@@ -11,6 +11,7 @@ const base = require('./webpack.base')
 
 module.exports = merge(base, {
   mode: 'development',
+  devtool: 'eval-cheap-module-source-map',
   devServer: {
     port: 3000,
     hot: true, // 热更新
