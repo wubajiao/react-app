@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-31 15:43:53
+ * @LastEditTime : 2023-03-31 16:23:54
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
@@ -84,6 +84,33 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: isDev,
+            },
+          },
+        ],
+      },
+      // 处理图片
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10 * 1024,
+              name: '[name].[contenthash:8].[ext]',
+              outputPath: 'assets/images',
+            },
+          },
+        ],
+      },
+      // 处理字体
+      {
+        test: /\.(ttf|woff|woff2|eot|otf)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name].[contenthash:8].[ext]',
+              outputPath: 'assets/fonts',
             },
           },
         ],
