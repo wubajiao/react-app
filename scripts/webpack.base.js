@@ -3,9 +3,10 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-31 17:42:20
+ * @LastEditTime : 2023-04-04 14:45:21
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { resolve } = require('path')
 const path = require('path')
 const { isDev } = require('./constants')
 
@@ -53,6 +54,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
+    alias: {
+      '@': path.resolve('src'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({

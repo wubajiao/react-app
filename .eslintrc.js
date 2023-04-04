@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 11:31:15
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-30 17:36:23
+ * @LastEditTime : 2023-04-04 14:41:34
  */
 const OFF = 0
 const WARN = 1
@@ -37,6 +37,7 @@ module.exports = {
       node: {
         extensions: ['.tsx', '.ts', '.js', '.json'],
       },
+      typescript: {},
     },
   },
   rules: {
