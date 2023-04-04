@@ -3,8 +3,9 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 15:06:48
+ * @LastEditTime : 2023-04-04 15:14:26
  */
+const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
 const { isDev } = require('./constants')
@@ -62,6 +63,13 @@ module.exports = {
       template: resolve(__dirname, '../public/index.html'), // 模板路径
       filename: 'index.html', // 生成的文件
       cache: false, // 特别重要：防止之后使用v6版本 copy-webpack-plugin 时代码修改一刷新页面为空问题。
+    }),
+    // 进度条
+    new WebpackBar({
+      name: isDev ? '正在启动' : '正在打包',
+      color: '#52c41a', // 默认green，进度条颜色支持HEX
+      basic: false, // 默认true，启用一个简单的日志报告器
+      profile: false, // 默认false，启用探查器。
     }),
   ],
   module: {
