@@ -3,10 +3,11 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 15:14:26
+ * @LastEditTime : 2023-04-04 15:38:18
  */
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const { resolve } = require('path')
 const { isDev } = require('./constants')
 
@@ -70,6 +71,12 @@ module.exports = {
       color: '#52c41a', // 默认green，进度条颜色支持HEX
       basic: false, // 默认true，启用一个简单的日志报告器
       profile: false, // 默认false，启用探查器。
+    }),
+    // typescript 类型检查
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        configFile: resolve(__dirname, '../tsconfig.json'),
+      },
     }),
   ],
   module: {
