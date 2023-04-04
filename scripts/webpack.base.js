@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 15:53:27
+ * @LastEditTime : 2023-04-04 16:02:52
  */
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -62,6 +62,11 @@ module.exports = {
   // 使用文件缓存，提高二次编译速度
   cache: {
     type: 'filesystem',
+  },
+  // 将特定依赖排除在打包外
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
   },
   plugins: [
     new HtmlWebpackPlugin({
