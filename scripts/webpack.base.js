@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 16:02:52
+ * @LastEditTime : 2023-04-04 16:48:22
  */
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -67,6 +67,29 @@ module.exports = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
+  },
+  // 抽离公共依赖
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        chunks: 'all',
+        // 第三方模块
+        verdors: {
+          name: 'verdor', // chunk名称
+          test: /node_modules/, // 设置命中目录规则
+          priority: 1, // 优先级，数值越大，优先级越高
+          minSize: 0, // 小于这个大小的文件，不分割
+          minChunks: 1, // 最少复用几次，这里意思是只要用过一次就分割出来
+        },
+        // 公共模块
+        common: {
+          name: 'common',
+          minChunks: 2, // 只要引用过2次，就分割成公共代码
+          priority: 0,
+          minSize: 0,
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
