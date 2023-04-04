@@ -3,9 +3,10 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-30 12:29:27
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 15:12:27
+ * @LastEditTime : 2023-04-04 17:03:36
  */
 const { merge } = require('webpack-merge')
+const webpack = require('webpack')
 const base = require('./webpack.base')
 
 module.exports = merge(base, {
@@ -25,5 +26,5 @@ module.exports = merge(base, {
       },
     },
   },
-  plugins: [],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
 })
