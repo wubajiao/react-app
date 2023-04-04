@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 15:38:18
+ * @LastEditTime : 2023-04-04 15:53:27
  */
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -58,6 +58,10 @@ module.exports = {
     alias: {
       '@': resolve('src'),
     },
+  },
+  // 使用文件缓存，提高二次编译速度
+  cache: {
+    type: 'filesystem',
   },
   plugins: [
     new HtmlWebpackPlugin({
