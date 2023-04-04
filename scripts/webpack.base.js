@@ -3,11 +3,10 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 14:45:21
+ * @LastEditTime : 2023-04-04 15:06:48
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { resolve } = require('path')
-const path = require('path')
 const { isDev } = require('./constants')
 
 const getCssLoaders = (importLoaders) => [
@@ -46,21 +45,21 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/index.tsx'),
+    app: resolve(__dirname, '../src/index.tsx'),
   },
   output: {
     filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
-    path: path.resolve(__dirname, '../dist'),
+    path: resolve(__dirname, '../dist'),
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.json'],
     alias: {
-      '@': path.resolve('src'),
+      '@': resolve('src'),
     },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../public/index.html'), // 模板路径
+      template: resolve(__dirname, '../public/index.html'), // 模板路径
       filename: 'index.html', // 生成的文件
       cache: false, // 特别重要：防止之后使用v6版本 copy-webpack-plugin 时代码修改一刷新页面为空问题。
     }),
