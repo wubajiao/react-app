@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-03-31 17:00:32
+ * @LastEditTime : 2023-03-31 17:42:20
  */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
@@ -45,11 +45,14 @@ const getCssLoaders = (importLoaders) => [
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, '../src/index.js'),
+    app: path.resolve(__dirname, '../src/index.tsx'),
   },
   output: {
     filename: `js/[name]${isDev ? '' : '.[hash:8]'}.js`,
     path: path.resolve(__dirname, '../dist'),
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js', '.json'],
   },
   plugins: [
     new HtmlWebpackPlugin({
