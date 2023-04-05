@@ -3,11 +3,12 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-30 12:29:27
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 17:03:36
+ * @LastEditTime : 2023-04-05 21:19:22
  */
 const { merge } = require('webpack-merge')
 const webpack = require('webpack')
 const base = require('./webpack.base')
+const proxySetting = require('../src/setProxy')
 
 module.exports = merge(base, {
   mode: 'development',
@@ -25,6 +26,7 @@ module.exports = merge(base, {
         warnings: false,
       },
     },
+    proxy: { ...proxySetting },
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
 })
