@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:07:24
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-06 10:55:36
+ * @LastEditTime : 2023-04-06 12:07:03
  */
 import React, { useEffect } from 'react'
 import axios from 'axios'
@@ -16,6 +16,7 @@ function App() {
     axios
       .get('/api/girl')
       .then((response) => {
+        // 请求成功
         console.log('----', response)
       })
       .catch((error) => {
@@ -23,6 +24,7 @@ function App() {
       })
   }
 
+  // 初始化
   useEffect(() => {
     testAxios()
   }, [])

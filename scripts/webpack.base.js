@@ -3,12 +3,14 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:00:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-06 10:01:30
+ * @LastEditTime : 2023-04-06 12:12:32
  */
 const WebpackBar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const { resolve } = require('path')
 const { isDev } = require('./constants')
 
@@ -91,6 +93,19 @@ module.exports = {
         },
       },
     },
+    // 是否压缩,webpack5是默认开启的
+    minimize: !isDev,
+    // 压缩规则
+    minimizer: [
+      !isDev &&
+        new TerserPlugin({
+          extractComments: false,
+          terserOptions: {
+            compress: { pure_funcs: ['console.log'] },
+          },
+        }),
+      !isDev && new CssMinimizerPlugin(),
+    ].filter(Boolean),
   },
   plugins: [
     new HtmlWebpackPlugin({
