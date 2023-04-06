@@ -3,12 +3,13 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:07:24
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-05 21:46:58
+ * @LastEditTime : 2023-04-06 10:55:36
  */
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import Button from '@/components/Button'
 import B from './B'
+import './app.less'
 
 function App() {
   const testAxios = () => {
@@ -30,7 +31,7 @@ function App() {
     <>
       <B />
       <Button name='按钮' />
-      <div className='app'>hello React</div>
+      <div className='app-content'>hello React</div>
     </>
   )
 }
