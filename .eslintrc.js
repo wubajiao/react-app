@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2022-05-10 11:31:15
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 14:41:34
+ * @LastEditTime : 2023-04-06 16:30:26
  */
 const OFF = 0
 const WARN = 1
@@ -22,6 +22,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -31,7 +32,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'unicorn', 'promise'],
+  plugins: ['react', '@typescript-eslint', 'unicorn', 'promise', 'prettier'],
   settings: {
     'import/resolver': {
       node: {
