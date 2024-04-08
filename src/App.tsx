@@ -3,12 +3,11 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:07:24
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-06 14:14:53
+ * @LastEditTime : 2024-04-08 11:09:53
  */
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import Button from '@/components/Button'
-import B from './B'
+import Layout from '@/components/Layout'
 import './app.less'
 
 function App() {
@@ -29,13 +28,7 @@ function App() {
     testAxios()
   }, [])
 
-  return (
-    <>
-      <B />
-      <Button name='按钮' />
-      <div className='app-content'>hello React</div>
-    </>
-  )
+  return <Layout>111</Layout>
 }
 
 export default App
