@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:07:24
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-08 11:09:53
+ * @LastEditTime : 2024-04-08 11:23:01
  */
 import React, { useEffect } from 'react'
 import axios from 'axios'
@@ -13,7 +13,7 @@ import './app.less'
 function App() {
   const testAxios = () => {
     axios
-      .get('/api/girl')
+      .get('/api/post/list')
       .then((response) => {
         // 请求成功
         console.log('----', response)

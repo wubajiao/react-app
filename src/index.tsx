@@ -4,14 +4,18 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-31 16:45:29
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2023-04-04 18:07:35
+ * @LastEditTime : 2024-04-08 11:40:13
  */
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import App from './App'
+
+// mock
+import './mock/mockServer'
 
 if (module && module.hot) {
   module.hot.accept()
 }
-
-ReactDOM.render(<App />, document.querySelector('#root'))
+const container: any = document.querySelector('#root')
+const root = createRoot(container)
+root.render(<App />)
