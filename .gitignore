@@ -1,4 +1,4 @@
-# mac conceal files 
+# mac conceal files
 .DS_Store
 
 node_modules/
@@ -13,8 +13,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # lock files
-package-lock.json
-yarn-lock.json
+#package-lock.json
+#yarn-lock.json
 
 # Editor directories and files
 .idea
