@@ -3,10 +3,10 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 11:02:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 15:08:01
+ * @LastEditTime : 2024-04-10 15:51:13
  */
 import React from 'react'
-import { Layout, Flex } from 'antd'
+import { Layout } from 'antd'
 import { useRoutes } from 'react-router-dom'
 import routes from '@/routes'
 import Header from './Header'
@@ -23,7 +23,6 @@ const contentStyle: React.CSSProperties = {
 }
 
 const layoutStyle = {
-  borderRadius: 8,
   overflow: 'hidden',
   width: '100%',
 }
@@ -31,13 +30,11 @@ const layoutStyle = {
 function App() {
   const ElementRouter = useRoutes(routes)
   return (
-    <Flex gap='middle' wrap='wrap'>
-      <Layout style={layoutStyle}>
-        <Header />
-        <Content style={contentStyle}>{ElementRouter}</Content>
-        <Footer />
-      </Layout>
-    </Flex>
+    <Layout style={layoutStyle}>
+      <Header />
+      <Content style={contentStyle}>{ElementRouter}</Content>
+      <Footer />
+    </Layout>
   )
 }
 

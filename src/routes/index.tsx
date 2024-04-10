@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:20:58
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-08 14:31:07
+ * @LastEditTime : 2024-04-10 15:16:25
  */
 import React from 'react'
 import { Navigate } from 'react-router-dom'
@@ -20,10 +20,6 @@ const routes = [
     path: '/home',
     element: <Home />,
     children: [
-      {
-        path: '/home',
-        element: <Navigate to='/home/SubChild' />,
-      },
       {
         path: '/home/SubChild',
         element: <SubChild />,
