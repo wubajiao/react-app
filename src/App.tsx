@@ -3,11 +3,12 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-28 18:07:24
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-08 11:23:01
+ * @LastEditTime : 2024-04-10 14:40:17
  */
 import React, { useEffect } from 'react'
 import axios from 'axios'
-import Layout from '@/components/Layout'
+import Layout from '@/Layout'
+
 import './app.less'
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
     testAxios()
   }, [])
 
-  return <Layout>111</Layout>
+  return <Layout />
 }
 
 export default App

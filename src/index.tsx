@@ -4,10 +4,11 @@
  * @Author       : wuhaidong
  * @Date         : 2023-03-31 16:45:29
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-08 11:40:13
+ * @LastEditTime : 2024-04-10 14:23:44
  */
 import React from 'react'
 import { createRoot } from 'react-dom/client'
+import { HashRouter } from 'react-router-dom'
 import App from './App'
 
 // mock
@@ -18,4 +19,8 @@ if (module && module.hot) {
 }
 const container: any = document.querySelector('#root')
 const root = createRoot(container)
-root.render(<App />)
+root.render(
+  <HashRouter>
+    <App />
+  </HashRouter>,
+)
