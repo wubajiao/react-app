@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-10 12:11:10
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 16:59:28
+ * @LastEditTime : 2024-04-10 17:25:57
  */
 import React, { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
@@ -17,10 +17,11 @@ const { Header } = Layout
 
 function LayoutHeader() {
   const [items] = useState([
-    { path: '/home', title: '首页' },
-    { path: '/abut', title: '关于' },
-    { path: '/home/SubChild', title: '首页-child' },
-    { path: '/noFound', title: 'noFound' },
+    { path: '/home', title: '关于德安' },
+    { path: '/solution', title: '解决方案' },
+    { path: '/product', title: '产品研发' },
+    { path: '/hr', title: '人才招聘' },
+    { path: '/contact', title: '联系我们' },
   ])
   const [scroll, setScroll] = useState<boolean>(false)
   const [scrollHeight, setScrollHeight] = useState<number>(0)

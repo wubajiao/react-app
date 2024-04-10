@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 11:02:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 15:51:13
+ * @LastEditTime : 2024-04-10 22:42:26
  */
 import React from 'react'
 import { Layout } from 'antd'
@@ -15,11 +15,9 @@ import Footer from './Footer'
 const { Content } = Layout
 
 const contentStyle: React.CSSProperties = {
-  textAlign: 'center',
   minHeight: 120,
-  lineHeight: '120px',
   color: '#fff',
-  backgroundColor: '#0958d9',
+  backgroundColor: '#fff',
 }
 
 const layoutStyle = {

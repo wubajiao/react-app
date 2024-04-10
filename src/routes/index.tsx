@@ -3,13 +3,12 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:20:58
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 15:16:25
+ * @LastEditTime : 2024-04-10 17:26:20
  */
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import Home from './Home'
 import About from './About'
-import SubChild from './Home/SubChild'
 
 const routes = [
   {
@@ -19,12 +18,6 @@ const routes = [
   {
     path: '/home',
     element: <Home />,
-    children: [
-      {
-        path: '/home/SubChild',
-        element: <SubChild />,
-      },
-    ],
   },
   {
     path: '/about',
