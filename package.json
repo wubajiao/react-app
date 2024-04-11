@@ -11,7 +11,8 @@
     "build": "cross-env NODE_ENV=production webpack --config ./scripts/webpack.prod.js",
     "analyze": "cross-env NODE_ENV=production IS_ANALYZE=true webpack --config ./scripts/webpack.prod.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:css": "stylelint src/**/*.less --fix  --custom-syntax postcss-less"
   },
   "dependencies": {
     "antd": "^5.16.1",
@@ -61,6 +62,7 @@
     "node-sass": "^8.0.0",
     "portfinder": "^1.0.32",
     "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-less": "^6.0.0",
     "postcss-loader": "^7.1.0",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^8.2.0",
