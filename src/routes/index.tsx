@@ -3,13 +3,14 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:20:58
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-05-07 11:38:06
+ * @LastEditTime : 2024-05-07 15:59:52
  */
 import React from 'react'
 import { Navigate } from 'react-router-dom'
 import Home from './Home'
 import Solution from './Solution'
 import Product from './Product'
+import Hr from './Hr'
 import About from './About'
 
 const routes = [
@@ -28,6 +29,10 @@ const routes = [
   {
     path: '/product',
     element: <Product />,
+  },
+  {
+    path: '/hr',
+    element: <Hr />,
   },
   {
     path: '/about',
