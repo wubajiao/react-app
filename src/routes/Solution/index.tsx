@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-05-07 11:28:45
+ * @LastEditTime : 2024-05-07 11:45:18
  */
 import React from 'react'
 import Banner from '@/components/Banner'
@@ -24,7 +24,7 @@ function Solution(props: any) {
   console.log('🚀 ~ Solution ~ props:', props)
   return (
     <div className='solution'>
-      <Banner title='智慧安全城市与智慧应急' />
+      <Banner title='解决方案' />
       <Content className='content1'>
         <ContentTitle text='智慧安全城市' />
         <div className='about'>
