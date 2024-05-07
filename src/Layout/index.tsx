@@ -3,11 +3,13 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 11:02:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 22:42:26
+ * @LastEditTime : 2024-05-07 22:46:22
  */
 import React from 'react'
-import { Layout } from 'antd'
+import { Layout, FloatButton } from 'antd'
 import { useRoutes } from 'react-router-dom'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { CustomerServiceOutlined } from '@ant-design/icons'
 import routes from '@/routes'
 import Header from './Header'
 import Footer from './Footer'
@@ -32,6 +34,15 @@ function App() {
       <Header />
       <Content style={contentStyle}>{ElementRouter}</Content>
       <Footer />
+      <FloatButton.Group style={{ right: 24 }}>
+        <FloatButton
+          icon={<CustomerServiceOutlined />}
+          tooltip='联系我们'
+          href='https://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzkzODAwMzIxOF80ODk0MjJfNDAwODg5MTI1MV8'
+          target='_blank'
+        />
+        <FloatButton.BackTop visibilityHeight={0} tooltip='回到顶部' />
+      </FloatButton.Group>
     </Layout>
   )
 }
