@@ -3,15 +3,15 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-10 17:32:25
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-11 10:45:49
+ * @LastEditTime : 2024-05-07 11:01:07
  */
 import React from 'react'
 
 import './index.less'
 
-function ContentTitle({ text }: any) {
+function ContentTitle({ text, className }: any) {
   return (
-    <div className='content-title'>
+    <div className={`content-title ${className || ''}`}>
       <div className='center'>{text}</div>
     </div>
   )

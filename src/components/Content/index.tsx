@@ -3,15 +3,15 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-10 17:32:25
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-11 09:44:21
+ * @LastEditTime : 2024-05-07 11:00:33
  */
 import React from 'react'
 
 import './index.less'
 
-function Content({ children }: any) {
+function Content({ children, className }: any) {
   return (
-    <div className='content'>
+    <div className={`content ${className || ''}`}>
       <div className='center'>{children}</div>
     </div>
   )
