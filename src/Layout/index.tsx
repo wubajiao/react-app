@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 11:02:56
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-10 22:42:26
+ * @LastEditTime : 2024-04-20 20:50:46
  */
 import React from 'react'
 import { Layout } from 'antd'
@@ -29,7 +29,7 @@ function App() {
   const ElementRouter = useRoutes(routes)
   return (
     <Layout style={layoutStyle}>
-      <Header />
+      {/* <Header /> */}
       <Content style={contentStyle}>{ElementRouter}</Content>
       <Footer />
     </Layout>
