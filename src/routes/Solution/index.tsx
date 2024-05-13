@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-05-07 11:45:18
+ * @LastEditTime : 2024-05-13 17:18:44
  */
 import React from 'react'
 import Banner from '@/components/Banner'
@@ -25,7 +25,7 @@ function Solution(props: any) {
   return (
     <div className='solution'>
       <Banner title='解决方案' />
-      <Content className='content1'>
+      <Content className='content1' id='solutionSection1'>
         <ContentTitle text='智慧安全城市' />
         <div className='about'>
           <div className='left'>
@@ -40,7 +40,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content2'>
-        <ContentTitle text='智慧应急' />
+        <ContentTitle text='智慧应急' id='solutionSection2' />
         <div className='about'>
           <div className='left'>
             <p>
@@ -53,7 +53,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content1'>
-        <ContentTitle text='智慧园区' />
+        <ContentTitle text='智慧园区' id='solutionSection3' />
         <div className='about'>
           <div className='left'>
             <p>
@@ -67,7 +67,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content2'>
-        <ContentTitle text='智慧物联' />
+        <ContentTitle text='智慧物联' id='solutionSection5' />
         <div className='about'>
           <div className='left'>
             <p>
@@ -80,7 +80,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content1'>
-        <ContentTitle text='智慧企业' />
+        <ContentTitle text='智慧企业' id='solutionSection4' />
         <div className='about'>
           <div className='left'>
             <p>

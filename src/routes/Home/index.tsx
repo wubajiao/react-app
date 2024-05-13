@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-11 11:03:42
+ * @LastEditTime : 2024-05-13 16:41:17
  */
 import React from 'react'
 import Banner from '@/components/Banner'
@@ -43,7 +43,7 @@ function Home(props: any) {
     <div className='home'>
       <Banner title='关于我们' />
       <Content>
-        <ContentTitle text='公司简介' />
+        <ContentTitle text='公司简介' id='homeSection1' />
         <div className='about'>
           <div className='left'>
             <img src={logo2} alt='logo2' />
@@ -76,7 +76,7 @@ function Home(props: any) {
             <p>核 心 口 号： 因为专注，所以专业</p>
           </div>
         </div>
-        <ContentTitle text='荣誉资质' />
+        <ContentTitle text='荣誉资质' id='homeSection2' />
         <div className='honor'>
           {honorList.map((item: any) => {
             return (
@@ -87,7 +87,7 @@ function Home(props: any) {
             )
           })}
         </div>
-        <ContentTitle text='合作伙伴' />
+        <ContentTitle text='合作伙伴' id='homeSection3' />
         <div className='honor'>
           {partners.map((item: any) => {
             return (

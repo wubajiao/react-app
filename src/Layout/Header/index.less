@@ -10,6 +10,12 @@
   &.scroll {
     background: rgb(255 255 255 / 100%);
   }
+  &:hover {
+    background: rgb(255 255 255 / 100%);
+    .nav-item {
+      color: #333;
+    }
+  }
   .nav {
     display: flex;
     justify-content: space-between;
@@ -24,6 +30,7 @@
     }
     .right {
       .nav-item {
+        position: relative;
         display: inline-block;
         height: 80px;
         margin-left: 60px;
@@ -31,12 +38,46 @@
         font-weight: 600;
         font-size: 16px;
         line-height: 80px;
+        .sub-nav {
+          position: absolute;
+          top: 80px;
+          left: -42px;
+          display: none;
+          padding: 20px 0;
+          background: #fff;
+          .sub-nav-item {
+            display: block;
+            width: 150px;
+            height: 40px;
+            color: #333;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #fff;
+            &:hover {
+              color: #fff;
+              background-color: #f5222d;
+            }
+          }
+        }
         &.scroll {
           color: #333;
         }
         &.active {
           border-bottom: 2px solid #f5222d;
         }
+        &:hover {
+          border-bottom: 2px solid #f5222d;
+          .sub-nav {
+            display: block;
+          }
+        }
+      }
+    }
+    &:hover {
+      .nav-item {
+        color: #333;
       }
     }
   }

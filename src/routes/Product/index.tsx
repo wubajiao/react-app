@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-05-07 15:54:25
+ * @LastEditTime : 2024-05-13 17:27:28
  */
 import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -44,15 +44,6 @@ const terminal = [
   { name: '无线传感器', img: productTerminal4 },
 ]
 
-// 获取一个随机颜色值
-function randomColor() {
-  const r = Math.floor(Math.random() * 255)
-  const g = Math.floor(Math.random() * 255)
-  const b = Math.floor(Math.random() * 255)
-
-  return `rgb(${r},${g},${b})`
-}
-
 // 轮播数据
 const swiperList = [
   {
@@ -76,7 +67,7 @@ function Solution(props: any) {
     <div className='product'>
       <Banner title='产品研发' />
       <Content className='content1'>
-        <ContentTitle text='工业互联网平台' />
+        <ContentTitle text='工业互联网平台' id='productSection1' />
         <div className='about'>
           <div className='left'>
             <p>
@@ -89,7 +80,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content2'>
-        <ContentTitle text='实景三维数字化平台' />
+        <ContentTitle text='实景三维数字化平台' id='productSection2' />
         <div className='about'>
           <div className='left'>
             <p>
@@ -104,7 +95,7 @@ function Solution(props: any) {
       </Content>
       <ContentFull>
         <Content className='content1'>
-          <ContentTitle text='智能终端' />
+          <ContentTitle text='智能终端' id='productSection3' />
           <div className='terminal'>
             {terminal.map((item) => {
               return (
@@ -118,7 +109,7 @@ function Solution(props: any) {
         </Content>
       </ContentFull>
       <Content className='content2'>
-        <ContentTitle text='企业设备健康状态智能监控平台' />
+        <ContentTitle text='智能监控平台' id='productSection4' />
         <div className='monitor'>
           <p>
             设备健康状态智能监控平台，集振动、温度检测技术以及公司电气设备检测专利技术——“电流成份检测”于一体的设备状态在线监测系统，同时还可以接入企业已有的油液分析在线监测系统及其他实时监测系统，提供了统一的基于多参数数据融合分析的设备状态模型，实现了覆盖设备的机械部分、电气部分与润滑磨损部分的全面状态监测、分析、实时预警与故障诊断。
@@ -159,7 +150,7 @@ function Solution(props: any) {
         </div>
       </ContentFull>
       <Content className='content1'>
-        <ContentTitle text='企业安全双控体系平台' />
+        <ContentTitle text='安全双控体系平台' id='productSection5' />
         <div className='monitor'>
           <p>充分利用互联网、GIS、大数据、人工智能等技术，构建智慧风险分级管控和隐患排查治理双重预防体系。</p>
           <p>
@@ -181,7 +172,7 @@ function Solution(props: any) {
         </div>
       </Content>
       <Content className='content2'>
-        <ContentTitle text='空间数据治理平台' />
+        <ContentTitle text='空间数据治理平台' id='productSection6' />
         <div className='monitor'>
           <p>
             空间数据治理平台汇集应急、地震、海洋、水利、住建、环保、林草等政府部门的空间数据，基于空间数据处理存储、空间数据服务等技术，构建面向国家、省、地（市）、县（区）级的全空间数据资源体系，实现空间数据解析入库、质检、预览和导出、处理、分析统计、共享服务等功能，支持对于海量空间数据智能分析挖掘和决策服务。

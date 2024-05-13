@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-05-07 17:41:22
+ * @LastEditTime : 2024-05-13 17:30:40
  */
 import React from 'react'
 import Banner from '@/components/Banner'
@@ -22,7 +22,9 @@ function Hr(props: any) {
         </div>
         <div className='list'>
           <div className='item'>
-            <div className='title'>岗位：java开发工程师</div>
+            <div className='title' id='hrSection1'>
+              岗位：java开发工程师
+            </div>
             <div className='content'>
               <div className='requirement'>招聘要求：</div>
               <div className='requirement-content'>
@@ -48,7 +50,9 @@ function Hr(props: any) {
             </div>
           </div>
           <div className='item'>
-            <div className='title'>岗位：前端开发工程师</div>
+            <div className='title' id='hrSection2'>
+              岗位：前端开发工程师
+            </div>
             <div className='content'>
               <div className='requirement'>招聘要求：</div>
               <div className='requirement-content'>
@@ -76,7 +80,9 @@ function Hr(props: any) {
             </div>
           </div>
           <div className='item'>
-            <div className='title'>岗位：销售经理</div>
+            <div className='title' id='hrSection3'>
+              岗位：销售经理
+            </div>
             <div className='content'>
               <div className='requirement'>招聘要求：</div>
               <div className='requirement-content'>
@@ -109,7 +115,9 @@ function Hr(props: any) {
             </div>
           </div>
           <div className='item'>
-            <div className='title'>岗位：项目经理</div>
+            <div className='title' id='hrSection4'>
+              岗位：项目经理
+            </div>
             <div className='content'>
               <div className='requirement'>招聘要求：</div>
               <div className='requirement-content'>

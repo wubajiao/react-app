@@ -9,9 +9,9 @@ import React from 'react'
 
 import './index.less'
 
-function ContentTitle({ text, className }: any) {
+function ContentTitle({ text, className, id }: any) {
   return (
-    <div className={`content-title ${className || ''}`}>
+    <div className={`content-title ${className || ''}`} id={id}>
       <div className='center'>{text}</div>
     </div>
   )
