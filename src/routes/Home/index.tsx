@@ -3,9 +3,9 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-04-11 11:03:42
+ * @LastEditTime : 2024-07-15 11:31:33
  */
-import React from 'react'
+import React, { useEffect } from 'react'
 import Banner from '@/components/Banner'
 import Content from '@/components/Content'
 import ContentTitle from '@/components/ContentTitle'
@@ -21,6 +21,8 @@ import honor4 from '@/assets/images/山东国舜公司.png'
 import partner1 from '@/assets/images/中国安全生产科学研究院.png'
 import partner2 from '@/assets/images/北京超图公司.png'
 import partner3 from '@/assets/images/杭州数梦工场科技有限公司.png'
+
+import { findMatchingIds, rulesList, inputData } from './flowRule'
 
 // 荣誉资质
 const honorList = [
@@ -39,6 +41,10 @@ const partners = [
 
 function Home(props: any) {
   console.log('🚀 ~ Home ~ props:', props)
+  useEffect(() => {
+    const ids = findMatchingIds(rulesList, inputData)
+    console.log('rules ~ ids:', ids)
+  }, [])
   return (
     <div className='home'>
       <Banner title='关于我们' />
