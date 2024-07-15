@@ -3,7 +3,7 @@
  * @Author       : wuhaidong
  * @Date         : 2024-04-08 14:21:41
  * @LastEditors  : wuhaidong
- * @LastEditTime : 2024-07-15 11:31:33
+ * @LastEditTime : 2024-07-15 16:13:13
  */
 import React, { useEffect } from 'react'
 import Banner from '@/components/Banner'
@@ -22,7 +22,7 @@ import partner1 from '@/assets/images/中国安全生产科学研究院.png'
 import partner2 from '@/assets/images/北京超图公司.png'
 import partner3 from '@/assets/images/杭州数梦工场科技有限公司.png'
 
-import { findMatchingIds, rulesList, inputData } from './flowRule'
+import { findMatchingIds, findMatchingIds2, rulesList, inputData } from './flowRule'
 
 // 荣誉资质
 const honorList = [
@@ -43,7 +43,10 @@ function Home(props: any) {
   console.log('🚀 ~ Home ~ props:', props)
   useEffect(() => {
     const ids = findMatchingIds(rulesList, inputData)
+    const ids2 = findMatchingIds2(rulesList, inputData)
+
     console.log('rules ~ ids:', ids)
+    console.log('rules ~ ids2:', ids2)
   }, [])
   return (
     <div className='home'>

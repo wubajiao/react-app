@@ -8,18 +8,18 @@
 // }
 
 const inputData = {
-  employeeNum: '2566',
+  employeeNum: '25661',
   name: 'zeng',
   portB: 'CAN',
   post: '空管',
   // portA: 'CAN',
-  // certification: '没资质',
+  certification: '没资质',
 }
 
 const rulesList = [
   {
     id: 1720596036253,
-    type: 'or',
+    type: 'and',
     list: [
       {
         id: 1720596046702,
@@ -126,7 +126,7 @@ function findMatchingIds(rules, userInput) {
 
         // 处理嵌套条件
         if (nestedResult.length > 0) {
-          if (item.type === 'or' && nestedResult.length > 0) {
+          if (item.type === 'or') {
             // 对于'or'，只要有一个嵌套项匹配就足够
             result.push(...nestedResult)
           } else if (item.type === 'and' && nestedResult.length === item.list.length) {
@@ -161,4 +161,53 @@ function findMatchingIds(rules, userInput) {
   return findIdsInRules(rules, userInput)
 }
 
-export { findMatchingIds, inputData, rulesList }
+function findMatchingIds2(rules, userInput) {
+  // 定义一个内部函数来评估单个条件是否与用户输入匹配
+  function evaluateCondition(condition, input) {
+    return condition.variate in input && input[condition.variate] === condition.inputVal
+  }
+
+  // 定义一个内部函数来遍历列表，并收集匹配的项ID
+  function traverseList(list, input, result = []) {
+    // 遍历列表中的每个项
+    for (const item of list) {
+      let currentItemMatched = false // 用于跟踪当前项是否匹配
+
+      // 如果项包含嵌套列表（表示组合条件），则递归调用traverseList
+      if ('list' in item) {
+        const nestedResult = traverseList(item.list, input, [])
+
+        // 根据type来处理嵌套结果
+        if (item.type === 'or' && nestedResult.length > 0) {
+          // 对于'or'，只要有一个嵌套项匹配就足够
+          result.push(...nestedResult)
+          currentItemMatched = true
+        } else if (item.type === 'and' && nestedResult.length === item.list.length) {
+          // 对于'and'，所有嵌套项都必须匹配
+          result.push(...nestedResult)
+          currentItemMatched = true
+        }
+      } else {
+        // 处理非嵌套条件
+        // eslint-disable-next-line no-lonely-if
+        if (evaluateCondition(item, input)) {
+          // 如果是单个条件并且匹配，直接添加其ID
+          result.push(item.id)
+          currentItemMatched = true
+        }
+      }
+
+      if (!currentItemMatched && item.type === 'and') {
+        break // 退出当前and组合的遍历，因为已经确定不满足所有条件
+      }
+    }
+
+    // 返回匹配项ID列表
+    return result
+  }
+
+  // 主逻辑：遍历rules并收集匹配的ID
+  return traverseList(rules, userInput)
+}
+
+export { findMatchingIds, findMatchingIds2, inputData, rulesList }
