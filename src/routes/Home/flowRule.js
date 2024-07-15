@@ -9,7 +9,7 @@
 
 const inputData = {
   employeeNum: '2566',
-  name: 'zeng1',
+  name: 'zeng',
   portB: 'CAN',
   post: '空管',
   // portA: 'CAN',
@@ -147,7 +147,18 @@ function findMatchingIds(rules, userInput) {
     return result
   }
 
-  return traverseList(rules[0].list, userInput)
+  function findIdsInRules(rulesData, input) {
+    let result = []
+    for (const ruleSet of rulesData) {
+      if (ruleSet.list) {
+        const idsFromThisSet = traverseList(ruleSet.list, input, []) // 遍历当前规则集的list并收集匹配的ID
+        result = result.concat(idsFromThisSet) // 将当前规则集的匹配ID添加到结果中
+      }
+    }
+    return result
+  }
+
+  return findIdsInRules(rules, userInput)
 }
 
 export { findMatchingIds, inputData, rulesList }
