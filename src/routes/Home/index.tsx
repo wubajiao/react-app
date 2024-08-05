@@ -22,6 +22,8 @@ import partner1 from '@/assets/images/中国安全生产科学研究院.png'
 import partner2 from '@/assets/images/北京超图公司.png'
 import partner3 from '@/assets/images/杭州数梦工场科技有限公司.png'
 
+import Input from './Input'
+
 // 荣誉资质
 const honorList = [
   { logo: honor1, name: '安标国家矿用产品安全标志中心' },
@@ -43,6 +45,8 @@ function Home(props: any) {
     <div className='home'>
       <Banner title='关于我们' />
       <Content>
+        <Input onSubmit={(value: any) => console.log(value)} />
+
         <ContentTitle text='公司简介' id='homeSection1' />
         <div className='about'>
           <div className='left'>
